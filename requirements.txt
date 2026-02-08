@@ -1,0 +1,2 @@
+# uvicorn main:main_app --reload
+#running command 

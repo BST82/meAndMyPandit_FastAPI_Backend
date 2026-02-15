@@ -1,13 +1,12 @@
-# configurations.py
-
 from motor.motor_asyncio import AsyncIOMotorClient
-from dotenv import load_dotenv
 import os
 import certifi
 
-load_dotenv()  # loads .env
-
 MONGO_URI = os.getenv("MONGO_URI")
+
+# Stop app if env missing (prevents localhost fallback)
+if not MONGO_URI:
+    raise Exception("MONGO_URI not set in environment")
 
 client = AsyncIOMotorClient(
     MONGO_URI,

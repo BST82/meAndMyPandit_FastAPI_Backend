@@ -1,18 +1,23 @@
 # configurations.py
 
 from motor.motor_asyncio import AsyncIOMotorClient
+from dotenv import load_dotenv
+import os
+import certifi
 
-# ✅ MongoDB Atlas connection string
-MONGO_URI = "mongodb+srv://bt7355711982_db_user:BGo95wgi0pHSuLCt@meandmy.0vxnuac.mongodb.net/meAndMy?retryWrites=true&w=majority"
+load_dotenv()  # loads .env
 
-# Create client
-client = AsyncIOMotorClient(MONGO_URI)
+MONGO_URI = os.getenv("MONGO_URI")
 
-# Database
+client = AsyncIOMotorClient(
+    MONGO_URI,
+    tls=True,
+    tlsCAFile=certifi.where()
+)
+
 db = client["meAndMy"]
 
-# Collections
 user_collection = db["userlogins"]
 user_registration_collection = db["users"]
 panchang_collection = db["monthly_panchang"]
-festival_collection = db["festivals"]   
+festival_collection = db["festivals"]

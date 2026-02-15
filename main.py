@@ -6,7 +6,7 @@ app = FastAPI(title="Pandit Application")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200","https://mypandit.meandmypandit.com/"],
+    allow_origins=["http://localhost:4200","https://mypandit.meandmypandit.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -1,0 +1,39 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Database / large files
+*.bsp
+*.download
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build files
+dist/
+build/
+
+# Python compiled files
+*.pyc
+
+# Temporary files
+*.tmp
+*.temp
